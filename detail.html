@@ -1,0 +1,95 @@
+<html>
+<head>
+  <style>
+    /* Add your CSS styles here */
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Add your header code here -->
+  </header>
+  <main>
+    <section id="station-info">
+      <!-- Add your station information code here -->
+    </section>
+    <section id="nearby-stations">
+      <!-- Add your map or list code here -->
+    </section>
+  </main>
+  <script>
+    // Add your JavaScript code here
+    var info = document.getElementById("station-info");
+    var nearby = document.getElementById("nearby-stations");
+    var apiKey = "hkZVQijE8ZvMpchuICzQYDI8gIyPjxVsGzt9h0oI"; // Replace with your API key
+    var apiUrl = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key="+apiKey; // Base URL for the API
+    var stationId = window.location.search.split("=")[1]; // Get the station id from the URL query string
+    if (stationId) {
+      // Station id exists
+      // Build the API request URL for getting the station details
+      var detailUrl = apiUrl+"&id="+stationId;
+      // Send the API request using XMLHttpRequest
+      var xhr1 = new XMLHttpRequest();
+      xhr1.open("GET", detailUrl);
+      xhr1.onload = function() {
+        if (xhr1.status == 200) {
+          // Request successful
+          var response = JSON.parse(xhr1.responseText); // Parse the response data as JSON
+          var station = response.alt_fuel_station; // Get the station object 
+          // Add the station information to the section element 
+          info.innerHTML = "<h2>"+station.station_name+"</h2>"+
+                            "<p>"+station.street_address+", "+station.city+", "+station.state+", "+station.zip+"</p>"+
+                            "<p>Phone: "+station.phone+"</p>"+
+                            "<p>Fuel Type: "+station.fuel_type_code+"</p>"+ 
+                            "<p>Access Times: "+station.access_days_time+"</p>"+ 
+                            "<p>EV Network: "+station.ev_network+"</p>"+ "<p>EV Connector Types: "+station.ev_connector_types.join(", ")+"</p>"; 
+                        } else { 
+                            // Request failed 
+                            info.innerHTML = "<p>Sorry, something went wrong. Please try again later.</p>"; }
+                         };
+        xhr1.send(); 
+        // Send the request
+    // Build the API request URL for getting the nearby stations
+  var nearbyUrl = apiUrl+"&latitude="+station.latitude+"&longitude="+station.longitude+"&radius=5";
+  // Send the API request using XMLHttpRequest
+  var xhr2 = new XMLHttpRequest();
+  xhr2.open("GET", nearbyUrl);
+  xhr2.onload = function() {
+    if (xhr2.status == 200) {
+      // Request successful
+      var response = JSON.parse(xhr2.responseText); // Parse the response data as JSON
+      var stations = response.fuel_stations; // Get the array of fuel stations
+      if (stations.length > 0) {
+        // Stations found
+        nearby.innerHTML = ""; // Clear the previous results
+        for (var i = 0; i < stations.length; i++) {
+          // Loop through the stations array
+          var station = stations[i]; // Get the current station object
+          // Create a div element for each station
+          var stationDiv = document.createElement("div");
+          stationDiv.className = "station";
+          // Add the station information to the div element
+          stationDiv.innerHTML = "<h3>"+station.station_name+"</h3>"+
+                                 "<p>"+station.street_address+", "+station.city+", "+station.state+", "+station.zip+"</p>"+
+                                 "<p>Phone: "+station.phone+"</p>"+
+                                 "<p>Fuel Type: "+station.fuel_type_code+"</p>"+
+                                 "<p>Access Times: "+station.access_days_time+"</p>";
+          // Append the div element to the nearby section
+          nearby.appendChild(stationDiv);
+        }
+      } else {
+        // No stations found
+        nearby.innerHTML = "<p>No nearby stations found within 5 miles.</p>";
+      }
+    } else {
+      // Request failed
+      nearby.innerHTML = "<p>Sorry, something went wrong. Please try again later.</p>";
+    }
+  };
+  xhr2.send(); // Send the request
+} else {
+  // Station id does not exist
+  info.innerHTML = "<p>No station id provided. Please go back to the search page and select a station.</p>";
+}
+</script>
+</body>
+</html>
