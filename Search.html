@@ -1,13 +1,86 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <style>
-    /* Add your CSS styles here */
-  </style>
+  	<title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+
 </head>
+<style>
+.column {
+  float: left;
+  width: 20%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+</style>
+
 <body>
   <header>
     <!-- Add your header code here -->
   </header>
+  
+  <section class="ftco-section">
+		<div class="container-fluid px-md-5">
+			<div class="row justify-content-between">
+				<div class="col-md-8 order-md-last">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<a class="navbar-brand" href="index.html">Alternate Fuel Sources</a>
+						</div>
+					</div>
+				</div>
+				</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container-fluid">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav m-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item active"><a href="search.html" class="nav-link">Search</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+	</section>
+	
+	
   <main>
     <form id="search-form">
       <label for="location">Location:</label>
@@ -25,7 +98,7 @@
         <option value="LNG">Natural Gas (LNG)</option>
         <option value="LPG">Propane (LPG)</option> 
       </select> 
-      <button id="submit-button" type="submit">Search</button>     
+      <button id="submit-button" type="submit" class="btn btn-secondary">Search</button>     
     </form> 
     <section id="search-results">
       <!-- Add your map or list code here -->
@@ -83,6 +156,9 @@
           if (stations.length > 0) {
             // Stations found
             results.innerHTML = ""; // Clear the previous results
+			var rowdiv=document.createElement("div");
+			rowdiv.className= "row";
+			
             for (var i = 0; i < stations.length; i++) {
               // Loop through the stations array
               var station = stations[i]; // Get the current station object
@@ -90,13 +166,15 @@
               var stationDiv = document.createElement("div");
               stationDiv.className = "station";
               // Add the station information to the div element
-              stationDiv.innerHTML = "<h3>"+station.station_name+"</h3>"+
-                                     "<p>"+station.street_address+", "+station.city+", "+station.state+", "+station.zip+"</p>"+
-                                     "<p>Phone: "+station.phone+"</p>"+
-                                     "<p>Fuel Type: "+station.fuel_type_code+"</p>"+
-                                     "<p>Access Times: "+station.access_days_time+"</p>";
-                                     //"<a href='detail.html?id="+station.id+"'>More Details</a>";
+              stationDiv.innerHTML = "<div class='column'><div class='card'><div class='container'><h5 class='card-title'>" + station.station_name + "</h5>" +
+					"<p class='card-text'>" + station.street_address + ", " + station.city + ", " + station.state + ", " + station.zip + "</p>" +
+					"<p class='card-text'>Phone: " + station.phone + "</p>" +
+					"<p class='card-text'>Fuel Type: " + station.fuel_type_code + "</p>" +
+					"<p class='card-text'>Access Times: " + station.access_days_time + "</p>" +
+					"<a href='detail.html?id=" + station.id + "'>More Details</a></div></div></div>";
+
               // Append the div element to the results section
+			  //rowdiv.appendChild(stationDiv);
               results.appendChild(stationDiv);
             }
           } else {
@@ -111,5 +189,6 @@
       xhr.send(); // Send the request
     });
   </script>
+
 </body>
 </html>

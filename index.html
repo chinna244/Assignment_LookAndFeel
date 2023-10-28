@@ -1,28 +1,64 @@
-<html>
-<head>
-  <style>
-    /* Add your CSS styles here */
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Alternative Fuel Finder</h1>
-    <img src="logo.png" alt="Logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="search1.html">Search</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container-fluid px-md-5">
+			<div class="row justify-content-between">
+				<div class="col-md-8 order-md-last">
+					<div class="row" >
+						<div class="col-md-6 text-center">
+							<a class="navbar-brand" href="index.html">Alternate Fuel Sources</a>
+						</div>
+					</div>
+				</div>
+				</div>
+		</div>
+		
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container-fluid">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav m-auto">
+	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="search1.html" class="nav-link">Search</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+	</section>
+	
+	<main>
     <h2>Welcome to Alternative Fuel Finder</h2>
     <p>This website helps you find alternative fuel stations near your location or along a route.<br>
        <br>You can choose from different fuel types such as biodiesel, electric, ethanol, hydrogen, natural gas, and propane. 
        You can also get information such as the station name, address, phone number, access times, etc.</p>
-    <button id="start-button">Start Searching</button>
+	<button id="start-button" type="button" class="btn btn-secondary">Start Searching</button>
+
   </main>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
   <script>
     // Add your JavaScript code here
     var button = document.getElementById("start-button");
@@ -31,5 +67,11 @@
       window.location.href = "search.html";
     });
   </script>
-</body>
+
+	</body>
 </html>
+
+
+
+
+  
