@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </head>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+  
 }
 
 html {
@@ -38,6 +38,19 @@ html {
   margin: 8px;
 }
 
+.profile_image{
+	margin-top: 50px;
+    margin-left: auto;
+    border: 2px solid #555;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+
+.profile_name{
+    text-align: center;
+}
+
 .about-section {
   padding: 50px;
   text-align: center;
@@ -58,6 +71,12 @@ html {
 .title {
   color: grey;
 }
+.heading{
+text-align:center; 
+margin-top:40px; 
+smargin-bottom:30px;
+}
+
 
 .button {
   border: none;
@@ -80,10 +99,34 @@ html {
     width: 100%;
     display: block;
   }
+  /* Add some basic styling for the footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style the message on the left */
+        .footer-left {
+            float: left;
+        }
+
+        /* Style the social media links on the right */
+        .footer-right {
+            float: right;
+        }
+
+        /* Style the social media icons */
+        .footer-right a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+        }
 }
 
 </style>
-<body>
+<body style="overflow-x: hidden;">
 	<section class="ftco-section">
 		<div class="container-fluid px-md-5">
 			<div class="row justify-content-between">
@@ -96,21 +139,12 @@ html {
 				</div>
 				</div>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container-fluid">
-	    
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="search.html" class="nav-link">Search</a></li>
-	        	<li class="nav-item active"><a href="about.html" class="nav-link">About Us</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="search1.html">Search</a></li>
+			<li><a class="active" href="about.html">About Us</a></li>
+		</ul>
+	  
     <!-- END nav -->
 
 	</section>
@@ -121,14 +155,14 @@ html {
   <p>Resize the browser window to see that this page is responsive by the way.</p>
 </div>
 
-<h2 style="text-align:center">Our Team</h2>
+<h2 class="heading"  >Our Team</h2>
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="/images/download.jpeg" alt="Jane" style="width:100%">
+	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" />
       <div class="container">
-        <h2>Jane Doe</h2>
-        <p class="title">CEO & Founder</p>
+        <h2 class="profile_name">Jane Doe</h2>
+        <p class="title profile_name" >CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
@@ -138,41 +172,91 @@ html {
 
   <div class="column">
     <div class="card">
-      <img src="/images/download.jpeg" alt="Mike" style="width:100%">
+	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" />
       <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
+        <h2 class="profile_name">Jane Doe</h2>
+        <p class="title profile_name" >CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mike@example.com</p>
+        <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
   </div>
-  
+
+
   <div class="column">
     <div class="card">
-      <img src="/images/download.jpeg" alt="John" style="width:100%">
+	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" />
       <div class="container">
-        <h2>John Doe</h2>
-        <p class="title">Designer</p>
+        <h2 class="profile_name">Jane Doe</h2>
+        <p class="title profile_name" >CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
+        <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
-      <img src="/images/1003220.png" alt="John" style="width:100%">
+	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" />
       <div class="container">
-        <h2>John Doe</h2>
-        <p class="title">Designer</p>
+        <h2 class="profile_name">Jane Doe</h2>
+        <p class="title profile_name" >CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
+        <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
   </div>
 </div>
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0" style="height: 90px;">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
 </body>
 </html>
+
