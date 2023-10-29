@@ -1,111 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Home Page</title>
+    <title>Search Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    
-	<link rel="stylesheet" href="css/style.css">
-
-  <style>
-		/* Additional CSS styles specific to this page */
-		.header {
-			text-align: center;
-			padding: 20px;
-		}
-
-		#search-form {
-			text-align: center;
-			margin: 20px;
-		}
-
-		#search-form label, #search-form input, #search-form select, #search-form button {
-			margin: 5px;
-		}
-
-		#search-results {
-			margin: 20px;
-      display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-
-		.station {
-			float: left;
-			width: 20%;
-			margin: 1rem 2rem; /* Adjust the margin to reduce space */
-			padding: 5px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		}
-
-		.station .card-title {
-			font-size: 18px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-
-		.station .card-text {
-			font-size: 14px;
-		}
-	</style>
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-</head>
-
 <body>
   <header>
-    <!-- Add logo with size of 150*150 -->
-  <a href="index.html">
-    <img src="img/logo1.jpeg" width="150" height="150" alt=""></a>
+    <a href="index.html">
+      <img src="img/logo1.jpeg" width="150" height="150" alt="">
+    </a>
     <h1 class="text-center automargin">ALTERNATIVE FUELING STATION LOCATOR</h1>
   </header>
-<div class="text-center yellow-background" style="margin: 0;">
-  <h2 style="margin-bottom: 0;">Assignment3_Look&Feel for ISM6225 - Distributed Information Systems</h2>
-</div>
-		<div class="container-fluid px-md-5">
-			<div class="row justify-content-between">
-				<div class="col-md-8 order-md-last">
-					<div class="row">
-						<div class="col-md-6 text-center">
-              <!-- Content for your header goes here if needed -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark py-lg-0 " id="navbarResponsive">
-		<div class="container-fluid" style="margin-left: 0px;">
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-		  <span class="navbar-toggler-icon"></span> Menu
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarResponsive"> <!-- Changed the class here -->
-			<ul class="navbar-nav mr-auto">
-			  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-			  <li class="nav-item"><a href="search1.html" class="nav-link">Search</a></li>
-			  <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-			</ul>
-		  </div>
-		</div>
-	  </nav>
-
-	
+  <div class="text-center yellow-background" style="margin: 0;">
+    <h2 style="margin-bottom: 0;">Assignment3_Look&Feel for ISM6225 - Distributed Information Systems</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark  bg-dark py-lg-0" id="navbarResponsive">
+    <div class="container-fluid" style="margin-left: 0px;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="search1.html" class="nav-link">Search</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <main>
     <form id="search-form">
       <label for="location">Location:</label>
       <input type="text" id="location" name="location" placeholder="Enter your address or zip code">
-      <label for="route">Route:</label>
-      <input type="text" id="route" name="route" placeholder="Enter your origin and destination">
       <label for="fuel-type">Fuel Type:</label>
       <select id="fuel-type" name="fuel-type">
         <option value="">All</option>
@@ -115,86 +46,14 @@
         <option value="HY">Hydrogen</option>
         <option value="CNG">Natural Gas (CNG)</option>
         <option value="LNG">Natural Gas (LNG)</option>
-        <option value="LPG">Propane (LPG)</option> 
-      </select> 
-      <button id="submit-button" type="submit" class="btn btn-secondary">Search</button>     
-    </form> 
-    <section id="search-results">
-      <!-- Add your map or list code here -->
-    </section> 
+        <option value="LPG">Propane (LPG)</option>
+      </select>
+      <button id="submit-button" type="submit" class="btn btn-secondary">Search</button>
+    </form>
+    <section id="search-results" class="card-container">
+      <!-- Result cards will be dynamically added here using JavaScript -->
+    </section>
   </main>
-  
-  <script> 
-    // Add your JavaScript code here
-    var form = document.getElementById("search-form");
-    var button = document.getElementById("submit-button");
-    var results = document.getElementById("search-results");
-    var apiKey = "hkZVQijE8ZvMpchuICzQYDI8gIyPjxVsGzt9h0oI"; // Replace with your API key
-    var apiUrl = "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key="+apiKey; // Base URL for the API
-
-    button.addEventListener("click", function(event) {
-      event.preventDefault(); // Prevent the default form submission behavior
-      var location = document.getElementById("location").value;
-      var route = document.getElementById("route").value;
-      var fuelType = document.getElementById("fuel-type").value;
-
-      if (location === "" && route === "") {
-        alert("Please enter a location or a route");
-        return;
-      }
-
-      if (location !== "" && route !== "") {
-        alert("Please enter either a location or a route, not both");
-        return;
-      }
-
-      var requestUrl = apiUrl;
-
-      if (location !== "") {
-        requestUrl += "&location="+location;
-      }
-
-      if (route !== "") {
-        requestUrl += "&route="+route;
-      }
-
-      if (fuelType !== "") {
-        requestUrl += "&fuel_type="+fuelType;
-      }
-
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", requestUrl);
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          var response = JSON.parse(xhr.responseText);
-          var stations = response.fuel_stations;
-
-          if (stations.length > 0) {
-            results.innerHTML = "";
-
-            for (var i = 0; i < stations.length; i++) {
-              var station = stations[i];
-              var stationDiv = document.createElement("div");
-              stationDiv.className = "station";
-              stationDiv.innerHTML = "<div class='column'><div class='card'><div class='container'><h5 class='card-title'>" + station.station_name + "</h5>" +
-                "<p class='card-text'>" + station.street_address + ", " + station.city + ", " + station.state + ", " + station.zip + "</p>" +
-                "<p class='card-text'>Phone: " + station.phone + "</p>" +
-                "<p class='card-text'>Fuel Type: " + station.fuel_type_code + "</p>" +
-                "<p class='card-text'>Access Times: " + station.access_days_time + "</p>" +
-                "<a href='detail.html?id=" + station.id + "'>More Details</a></div></div></div>";
-
-              results.appendChild(stationDiv);
-            }
-          } else {
-            results.innerHTML = "<p>No stations found for your search criteria.</p>";
-          }
-        } else {
-          results.innerHTML = "<p>Sorry, something went wrong. Please try again later.</p>";
-        }
-      };
-
-      xhr.send();
-    });
-  </script>
+  <script src="js/search_Script.js"></script>
 </body>
 </html>

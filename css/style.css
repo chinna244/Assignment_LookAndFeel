@@ -150,7 +150,29 @@ header {
     object-fit: cover; /* Adjust object-fit as needed (e.g., cover, contain) */
   }
   
- 
+ /* Add this CSS for styling the cards */
+.card {
+    margin: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* This aligns the cards neatly at the top */
+  }
+  
+  .station {
+    width: 30%; /* Adjust this width based on your design */
+    margin: 0 0 1rem 0; /* Adjust margins as needed */
+  }
+  
+  .station .card {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
   
   /* Additional styles for your specific content can be added below */
   
