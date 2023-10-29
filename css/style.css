@@ -1,1 +1,113 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a background color for the body */
+  body {
+    background-color: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Style the header and navigation bar */
+  .navbar {
+    background-color: #000000 !important; /* !important ensures the style is applied */
+    color: #ffffff;
+    padding: 10px 10px;
+    overflow: hidden;
+    
+  }
+  
+  .nav-link {
+    color: #ffffff !important; /* !important ensures the style is applied */
+    margin-right: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+  }
+  
+  .nav-link:hover {
+    color: #fd038c  !important;
+  }
 
+  /* Move the links to the left */
+  .navbar-collapse {
+    justify-content: flex-start !important;
+}
+
+  /* Style the logo in the center of the header */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #970a0a !important; /* !important ensures the style is applied */
+  }
+  
+  /* Style the main section */
+  main {
+    padding: 20px;
+  }
+  
+  /* Style page titles */
+  h1, h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #120000;
+  }
+  
+  /* Style paragraphs */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  /* Style buttons */
+  .btn {
+    background-color: #020202;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn:hover {
+    background-color: #ee005f;
+  }
+  
+  /* Add a little spacing between sections */
+  section {
+    margin: 20px 0;
+  }
+  
+  /* Center the content horizontally within the center-horizontal */
+  .center-horizontal {
+    text-align: center;
+  }
+  
+  /* Style for container */
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+/* Add this style rule for the header */
+header {
+    background-color: #016129 !important; /* Background color for the header */
+    padding: 20px 0; /* Adjust the padding as needed */
+  }
+
+  /* Add this style rule to your CSS for Assignment Heading */
+.yellow-background {
+    background-color: gold !important;
+  }
+  
+  /* Additional styles for your specific content can be added below */
+  

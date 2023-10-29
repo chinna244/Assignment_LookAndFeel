@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Metadata -->
+    <!-- Metadata and External Resources -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alternative Fueling Station Locator | Department of Energy</title>
-
-    <!-- External JavaScript Libraries -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-413694069"></script>
-
-    <!-- Inline Styles 
-    <style>
-        .page-hero {
-            background-image: linear-gradient(180deg, transparent 33%, rgba(41, 41, 41, .7)),
-                url(/themes/particle/dist/app-drupal/assets/texture_header_green.jpg?75643c12a34cf34992150ac27d2c2dc5) !important;
-        }
-        .page-title {
-            color: #cb3c3c !important;
-        }
-    </style>-->
-
-    <!-- External JavaScript Files 
-    <script src="/sites/default/files/google_tag/eere.energy.gov/google_tag.script.js?s38cf9" defer></script>
-    <script src="/sites/default/files/google_tag/energygov/google_tag.script.js?s38cf9" defer></script> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Fueling Station Locator Script -->
     <script async defer src="https://widgets.nrel.gov/afdc/station-locator/assets/embed.js"></script>
@@ -31,72 +17,44 @@
     </script>
 </head>
 <body>
-    <!-- Google Tag Manager (JavaScript required) -->
-    <noscript aria-hidden="true">
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZQX9F4" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <!-- Header -->
+    <header>
+        <h1 class="text-center">Alternate Fuel Station Locator</h1>
+    </header>
     
-    <!-- Site-wide Alert -->
-    <div id="sitewide-alert"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="search1.html" class="nav-link">Search</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Main Content -->
-    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
-        <div class="body-inner overlay-main">
-            <div class="overlay-body">
-                <div class="layout-container">
-                    <!-- Header -->
-                    <header role="banner">
-                        <div class="utility-menu">
-                            <div class="utility-outer">
-                                <!-- Utility Menu Content -->
-                            </div>
+    <!-- Main Content Area -->
+    <section class="layout" style="background-color: #c8dce0; background-image: url()">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="layout-inner-content">
+                        <!-- Content Goes Here -->
+                        <h1>Alternative Fuel Station Map</h1>
+                        <div id="afdc-stations">
+                            <div id="afdc-stations-loading">Loading alternative fueling station locator...</div>
                         </div>
-                    </header>
-
-                    <!-- Page Hero Section -->
-                    <div class="page-hero page-hero--image">
-                        <div class="page-hero-inner">
-                            <h1 class="page-title">Alternative Fueling Station Locator</h1>
-                            <div class="page-hero-office">
-                                <div class="office-title">
-                                    <span class="office-title-main">Department of Energy</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Section -->
-                    <div class="layout-content">
-                        <div class="content-wrapper content-wrapper--page">
-                            <!-- Breadcrumb Navigation -->
-                            <nav aria-label="breadcrumb" role="navigation">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item active is-active" aria-current="page">Alternative Fueling Station Locator</li>
-                                </ol>
-                            </nav>
-
-                            <!-- Main Content Area -->
-                            <section class="layout" style="background-color: #d25e5e; background-image: url()">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="layout-inner-content">
-                                                <!-- Content Goes Here -->
-                                                <div id="afdc-stations">
-                                                    <div id="afdc-stations-loading">Loading alternative fueling station locator...</div>
-                                                </div>
-                                                <noscript>Please enable JavaScript to view the alternative fueling station locator.</noscript>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+                        <noscript>Please enable JavaScript to view the alternative fueling station locator.</noscript>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer Section -->
     <footer class="footer footer--mainoffice" role="contentinfo">
@@ -106,12 +64,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript for Analytics and Tracking -->
-    <script src="//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOE" async defer id="_fed_an_ua_tag"></script>
-    <script src="//polyfill.io/v3/polyfill.min.js?features=fetch"></script>
-    <script src="//unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
-    <script src="//unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script> 
-    
 </body>
 </html>
