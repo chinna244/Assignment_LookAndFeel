@@ -9,6 +9,12 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
 	<link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -58,8 +64,14 @@
 
 <body>
   <header>
-    <h1 class="text-center">Alternate Fuel Station Locator</h1>
+    <!-- Add logo with size of 150*150 -->
+  <a href="index.html">
+    <img src="img/logo1.jpeg" width="150" height="150" alt=""></a>
+    <h1 class="text-center automargin">ALTERNATIVE FUELING STATION LOCATOR</h1>
   </header>
+<div class="text-center yellow-background" style="margin: 0;">
+  <h2 style="margin-bottom: 0;">Assignment3_Look&Feel for ISM6225 - Distributed Information Systems</h2>
+</div>
 		<div class="container-fluid px-md-5">
 			<div class="row justify-content-between">
 				<div class="col-md-8 order-md-last">
@@ -71,19 +83,20 @@
 				</div>
 			</div>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container-fluid">
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item active"><a href="search1.html" class="nav-link">Search</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-	        </ul>
-	      </div>
-	    </div>
+		<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark py-lg-0 " id="navbarResponsive">
+		<div class="container-fluid" style="margin-left: 0px;">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span> Menu
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive"> <!-- Changed the class here -->
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+			  <li class="nav-item"><a href="search1.html" class="nav-link">Search</a></li>
+			  <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+			</ul>
+		  </div>
+		</div>
 	  </nav>
 
 	

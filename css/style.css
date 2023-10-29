@@ -1,20 +1,56 @@
 /* Reset some default styles */
 body, h1, h2, p {
-    margin: 0;
-    padding: 0;
+    margin: 20;
+    padding: 20 auto;
   }
   
   /* Set a background color for the body */
   body {
     background-color: #f3f3f3;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Times New Roman",Times,'Roboto', sans-serif;
   }
-  
+
+    /* Style for the header */
+    header {
+        background-color: #016129 !important; /* Background color for the header */
+        padding: 20px; /* Adjust the padding */
+        text-align: center !important;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      /* Style for the logo image */
+      .header img {
+        margin-top: 0 !important;       
+        width: 200px;
+        height: 200px;
+      }
+
+      /* Add a specific CSS rule for the header text */
+    header h1 {
+    font-weight: bold;
+    }
+
+      /* Style for the header title */
+      .header h1 {
+        font-size: 20px;
+        color: #e2cfcf;
+        margin:auto;
+        padding: 10px;
+        font-weight: bold !important;
+        text-align: center !important;
+      }
+      .automargin{
+        margin:auto;
+      }
+
   /* Style the header and navigation bar */
   .navbar {
     background-color: #000000 !important; /* !important ensures the style is applied */
     color: #ffffff;
-    padding: 10px 10px;
+    padding: 20px 20px;
     
     
   }
@@ -94,13 +130,27 @@ body, h1, h2, p {
 /* Add this style rule for the header */
 header {
     background-color: #016129 !important; /* Background color for the header */
-    padding: 20px 0; /* Adjust the padding as needed */
+    padding: 20px 2rem; /* Adjust the padding as needed */
   }
-
   /* Add this style rule to your CSS for Assignment Heading */
 .yellow-background {
     background-color: gold !important;
+    padding: 20px 0 !important;
   }
+  
+  /* Add this style to control the image and info container heights */
+.info-container, .main-info {
+    height: 100%;
+  }
+  
+  /* Add this style to control the image's dimensions */
+  .info-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust object-fit as needed (e.g., cover, contain) */
+  }
+  
+ 
   
   /* Additional styles for your specific content can be added below */
   

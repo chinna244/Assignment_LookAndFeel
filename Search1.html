@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alternative Fueling Station Locator | Department of Energy</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Fueling Station Locator Script -->
@@ -17,26 +23,31 @@
     </script>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <h1 class="text-center">Alternate Fuel Station Locator</h1>
-    </header>
+        <!-- Add logo with size of 150*150 -->
+        <a href="index.html">
+        <img src="img/logo1.jpeg" width="150" height="150" alt=""></a>
+        <h1 class="text-center automargin" style="font-weight: bold;">ALTERNATIVE FUELING STATION LOCATOR</h1>
+      </header>
+<div class="text-center yellow-background" style="margin: 0;">
+    <h2 style="margin-bottom: 0;">Assignment3_Look&Feel for ISM6225 - Distributed Information Systems</h2>
+</div>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav m-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="search1.html" class="nav-link">Search</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark py-lg-0 " id="navbarResponsive">
+		<div class="container-fluid" style="margin-left: 0px;">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span> Menu
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav"> <!-- Changed the class here -->
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+			  <li class="nav-item active"><a href="search1.html" class="nav-link">Search</a></li>
+			  <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
 
     <!-- Main Content Area -->
     <section class="layout" style="background-color: #c8dce0; background-image: url()">
