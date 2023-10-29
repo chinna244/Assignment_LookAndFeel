@@ -1,77 +1,39 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-  	<title>Home Page</title>
+    <title>Alternative Fuel Stations Locator</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This website helps you find alternative fuel stations near your location or along a route.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your external CSS file -->
+  </head>
+  <body>
+	<h1 class="text-center">Alternative Fuel Stations Locator</h1> <!-- Add the heading here -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light text-center" id="ftco-navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="search1.html" class="nav-link">Search</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <main>
+      <h2>Welcome to Alternative Fuel Stations Locator</h2>
+      <p>This website helps you find alternative fuel stations near your location or along a route.<br>
+         <br>You can choose from different fuel types such as biodiesel, electric, ethanol, hydrogen, natural gas, and propane. 
+         You can also get information such as the station name, address, phone number, access times, etc.</p>
+      <label for="start-button">Click here to start searching:</label>
+      <button id="start-button" type="button" class="btn btn-secondary">Start Searching</button>
+    </main>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="css/style.css">
-
-	</head>
-	<body>
-	<section class="ftco-section">
-		<div class="container-fluid px-md-5">
-			<div class="row justify-content-between">
-				<div class="col-md-8 order-md-last">
-					<div class="row" >
-						<div class="col-md-6 text-center">
-							<a class="navbar-brand" href="index.html">Alternate Fuel Sources</a>
-						</div>
-					</div>
-				</div>
-				</div>
-		</div>
-		
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container-fluid">
-	    
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="search1.html" class="nav-link">Search</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-
-	</section>
-	
-	<main>
-    <h2>Welcome to Alternative Fuel Finder</h2>
-    <p>This website helps you find alternative fuel stations near your location or along a route.<br>
-       <br>You can choose from different fuel types such as biodiesel, electric, ethanol, hydrogen, natural gas, and propane. 
-       You can also get information such as the station name, address, phone number, access times, etc.</p>
-	<button id="start-button" type="button" class="btn btn-secondary">Start Searching</button>
-
-  </main>
-
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    // Add your JavaScript code here
-    var button = document.getElementById("start-button");
-    button.addEventListener("click", function() {
-      // Redirect to the search page
-      window.location.href = "search.html";
-    });
-  </script>
-
-	</body>
+    <script src="js/script.js"></script> <!-- Link to your external JavaScript file -->
+  </body>
 </html>
-
-
-
-
-  

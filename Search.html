@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   	<title>Home Page</title>
     <meta charset="utf-8">
@@ -8,45 +8,57 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
+  <style>
+		/* Additional CSS styles specific to this page */
+		.header {
+			text-align: center;
+			padding: 20px;
+		}
+
+		#search-form {
+			text-align: center;
+			margin: 20px;
+		}
+
+		#search-form label, #search-form input, #search-form select, #search-form button {
+			margin: 5px;
+		}
+
+		#search-results {
+			margin: 20px;
+      display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.station {
+			float: left;
+			width: 20%;
+			margin: 1rem 2rem; /* Adjust the margin to reduce space */
+			padding: 5px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		.station .card-title {
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.station .card-text {
+			font-size: 14px;
+		}
+	</style>
+
 </head>
-<style>
-.column {
-  float: left;
-  width: 20%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-</style>
+</head>
 
 <body>
   <header>
-    <!-- Add your header code here -->
+    <h1 class="text-center">Alternate Fuel Station Locator</h1>
   </header>
   
   <section class="ftco-section">
@@ -55,15 +67,14 @@
 				<div class="col-md-8 order-md-last">
 					<div class="row">
 						<div class="col-md-6 text-center">
-							<a class="navbar-brand" href="index.html">Alternate Fuel Sources</a>
+              <!-- Content for your header goes here if needed -->
 						</div>
 					</div>
 				</div>
-				</div>
+			</div>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container-fluid">
-	    
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
@@ -76,10 +87,7 @@
 	      </div>
 	    </div>
 	  </nav>
-    <!-- END nav -->
-
 	</section>
-	
 	
   <main>
     <form id="search-form">
@@ -103,7 +111,8 @@
     <section id="search-results">
       <!-- Add your map or list code here -->
     </section> 
-  </main> 
+  </main>
+  
   <script> 
     // Add your JavaScript code here
     var form = document.getElementById("search-form");
@@ -111,84 +120,70 @@
     var results = document.getElementById("search-results");
     var apiKey = "hkZVQijE8ZvMpchuICzQYDI8gIyPjxVsGzt9h0oI"; // Replace with your API key
     var apiUrl = "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key="+apiKey; // Base URL for the API
-   // var route_apiUrl = "https://developer.nrel.gov/api/alt-fuel-stations/v1/along-route.json?api_key="+apiKey; // Base URL for the API
 
     button.addEventListener("click", function(event) {
-      // Prevent the default form submission behavior
-      event.preventDefault();
-      // Get the user input values
+      event.preventDefault(); // Prevent the default form submission behavior
       var location = document.getElementById("location").value;
       var route = document.getElementById("route").value;
       var fuelType = document.getElementById("fuel-type").value;
-      // Validate the user input
-      if (location == "" && route == "") {
-        // No location or route entered
+
+      if (location === "" && route === "") {
         alert("Please enter a location or a route");
         return;
       }
-      if (location != "" && route != "") {
-        // Both location and route entered
+
+      if (location !== "" && route !== "") {
         alert("Please enter either a location or a route, not both");
         return;
       }
-      // Build the API request URL
+
       var requestUrl = apiUrl;
-      if (location != "") {
-        // Location entered
+
+      if (location !== "") {
         requestUrl += "&location="+location;
       }
-      if (route != "") {
-        // Route entered
+
+      if (route !== "") {
         requestUrl += "&route="+route;
       }
-      if (fuelType != "") {
-        // Fuel type selected
+
+      if (fuelType !== "") {
         requestUrl += "&fuel_type="+fuelType;
       }
-      // Send the API request using XMLHttpRequest
+
       var xhr = new XMLHttpRequest();
       xhr.open("GET", requestUrl);
       xhr.onload = function() {
-        if (xhr.status == 200) {
-          // Request successful
-          var response = JSON.parse(xhr.responseText); // Parse the response data as JSON
-          var stations = response.fuel_stations; // Get the array of fuel stations
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          var stations = response.fuel_stations;
+
           if (stations.length > 0) {
-            // Stations found
-            results.innerHTML = ""; // Clear the previous results
-			var rowdiv=document.createElement("div");
-			rowdiv.className= "row";
-			
+            results.innerHTML = "";
+
             for (var i = 0; i < stations.length; i++) {
-              // Loop through the stations array
-              var station = stations[i]; // Get the current station object
-              // Create a div element for each station
+              var station = stations[i];
               var stationDiv = document.createElement("div");
               stationDiv.className = "station";
-              // Add the station information to the div element
               stationDiv.innerHTML = "<div class='column'><div class='card'><div class='container'><h5 class='card-title'>" + station.station_name + "</h5>" +
-					"<p class='card-text'>" + station.street_address + ", " + station.city + ", " + station.state + ", " + station.zip + "</p>" +
-					"<p class='card-text'>Phone: " + station.phone + "</p>" +
-					"<p class='card-text'>Fuel Type: " + station.fuel_type_code + "</p>" +
-					"<p class='card-text'>Access Times: " + station.access_days_time + "</p>" +
-					"<a href='detail.html?id=" + station.id + "'>More Details</a></div></div></div>";
+                "<p class='card-text'>" + station.street_address + ", " + station.city + ", " + station.state + ", " + station.zip + "</p>" +
+                "<p class='card-text'>Phone: " + station.phone + "</p>" +
+                "<p class='card-text'>Fuel Type: " + station.fuel_type_code + "</p>" +
+                "<p class='card-text'>Access Times: " + station.access_days_time + "</p>" +
+                "<a href='detail.html?id=" + station.id + "'>More Details</a></div></div></div>";
 
-              // Append the div element to the results section
-			  //rowdiv.appendChild(stationDiv);
               results.appendChild(stationDiv);
             }
           } else {
-            // No stations found
             results.innerHTML = "<p>No stations found for your search criteria.</p>";
           }
         } else {
-          // Request failed
           results.innerHTML = "<p>Sorry, something went wrong. Please try again later.</p>";
         }
       };
-      xhr.send(); // Send the request
+
+      xhr.send();
     });
   </script>
-
 </body>
 </html>
