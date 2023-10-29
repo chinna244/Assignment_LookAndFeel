@@ -15,7 +15,7 @@ body, h1, h2, p {
     background-color: #000000 !important; /* !important ensures the style is applied */
     color: #ffffff;
     padding: 10px 10px;
-    overflow: hidden;
+    
     
   }
   
@@ -24,18 +24,11 @@ body, h1, h2, p {
     margin-right: 20px;
     text-decoration: none;
     transition: color 0.3s;
-    display: block;
   }
   
   .nav-link:hover {
     color: #fd038c  !important;
   }
-
-  /* Move the links to the left */
-  .navbar-collapse {
-    justify-content: flex-start !important;
-}
-
   /* Style the logo in the center of the header */
   .navbar-brand {
     font-size: 24px;
