@@ -4,126 +4,126 @@
   	<title>About Us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</head>
-<style>
-body {
-  font-family: 'Times New Roman', Times, serif;
-  
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 25%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.profile_image{
-	margin-top: 50px;
-    margin-left: auto;
-    border: 2px solid #555;
-    margin-right: auto;
-    margin-bottom: auto;
-}
-
-
-.profile_name{
-    text-align: center;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-.heading{
-text-align:center; 
-margin-top:40px; 
-margin-bottom:30px;
-}
-
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
+    <style>
+       /* styles for about us page */
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    
   }
-  /* Add some basic styling for the footer */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        /* Style the message on the left */
-        .footer-left {
-            float: left;
-        }
-
-        /* Style the social media links on the right */
-        .footer-right {
-            float: right;
-        }
-
-        /* Style the social media icons */
-        .footer-right a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
-        }
-}
-
-</style>
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 6px;
+  }
+  
+  .profile_image{
+      margin-top: 20px;
+      margin-left: auto;
+      border: 2px solid #555;
+      margin-right: auto;
+      margin-bottom: auto;
+  }
+  .profile_name{
+      text-align: center;
+      font-weight: bold;
+      margin: auto;
+  }
+  
+  .about-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #c8cfde;
+    color: rgb(164, 44, 44);
+  }
+  
+  .container {
+    padding: 10px 10px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  .heading{
+  text-align:center; 
+  margin-top:20px; 
+  margin-bottom:15px;
+  }
+  
+  .container {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #ff0051;
+  }
+  /* Adjust the footer section styles */
+  footer {
+    background-color: #fdfdfd;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Adjust the section styles to remove margin */
+  section {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Center the GitHub icon horizontally in the section */
+  section .btn-floating {
+    display: block;
+    margin: 0 auto;
+  }
+  
+    </style>
+</head>
 <body style="overflow-x: hidden;">
   <header>
     <!-- Add logo with size of 150*150 -->
@@ -173,10 +173,10 @@ margin-bottom:30px;
 <div class="row">
   <div class="column">
     <div class="card">
-	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="img/hareesh.png" />
+      <img class="profile_image" alt="Hareesh Prathipati" src="img/hareesh.png" width="250" height="250" />
       <div class="container">
-        <h2 class="profile_name">Hareesh Prathiapti</h2>
-        <p class="title profile_name" >CEO & Founder</p>
+        <h2 class="profile_name">Hareesh Prathipati</h2>
+        <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
@@ -186,24 +186,10 @@ margin-bottom:30px;
 
   <div class="column">
     <div class="card">
-	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="img/Rakshak Tadi.png" />
+      <img class="profile_image" alt="Dharma Rakshak Tadi" src="img/Rakshak Tadi.png" width="250" height="250" />
       <div class="container">
         <h2 class="profile_name">Dharma Rakshak Tadi</h2>
-        <p class="title profile_name" >CEO & Founder</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>jane@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="column">
-    <div class="card">
-	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" />
-      <div class="container">
-        <h2 class="profile_name">Jane Doe</h2>
-        <p class="title profile_name" >CEO & Founder</p>
+        <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
@@ -213,10 +199,23 @@ margin-bottom:30px;
 
   <div class="column">
     <div class="card">
-	  <img class="rounded-circle shadow-4-strong profile_image img-fluid"  alt="avatar2" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" />
+      <img class="profile_image" alt="Jane Doe" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" width="250" height="250" />
       <div class="container">
         <h2 class="profile_name">Jane Doe</h2>
-        <p class="title profile_name" >CEO & Founder</p>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img class="profile_image" alt="Jane Doe" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" width="250" height="250"/>
+      <div class="container">
+        <h2 class="profile_name">Jane Doe</h2>
+        <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>jane@example.com</p>
         <p><button class="button">Contact</button></p>
@@ -224,40 +223,15 @@ margin-bottom:30px;
     </div>
   </div>
 </div>
+
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0" style="height: 90px;">
     <!-- Section: Social media -->
     <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-
       <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+        <i class="fab fa-github"></i></a>
     </section>
     <!-- Section: Social media -->
   </div>
@@ -266,7 +240,7 @@ margin-bottom:30px;
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2023 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">Group 9</a>
+    <a class="text-white" href="index.html">Group 9</a>
   </div>
   <!-- Copyright -->
 </footer>
