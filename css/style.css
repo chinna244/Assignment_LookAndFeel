@@ -97,9 +97,10 @@ body, h1, h2, p {
   .btn {
     background-color: #020202;
     color: #fff;
-    padding: 10px 20px;
+    margin-left: 1em;
+   /* padding: 10px 20px;*/
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
     text-decoration: none;
@@ -149,7 +150,9 @@ header {
     height: 100%;
     object-fit: cover; /* Adjust object-fit as needed (e.g., cover, contain) */
   }
-  
+  .smaller-input {
+    width: 250px; /* Adjust the width as needed */
+}
  /* Add this CSS for styling the cards */
 .card {
     margin: 1rem;
