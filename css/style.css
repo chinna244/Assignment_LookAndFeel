@@ -177,6 +177,22 @@ header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   
-  /* Additional styles for your specific content can be added below */
- 
   
+  /* Media query for search results-  smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .card-body{
+	  width:350px;
+}
+.station{
+	width:100%;
+}
+ 
+}
+
+
+
+  /* Additional styles for your specific content can be added below */
+   

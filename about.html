@@ -36,13 +36,18 @@
     margin: 6px;
   }
   
-  .profile_image{
-      margin-top: 20px;
-      margin-left: auto;
-      border: 2px solid #555;
-      margin-right: auto;
-      margin-bottom: auto;
-  }
+  .profile_image {
+  margin: 30px auto;
+  border: 2px solid #555;
+  width: 250px;
+  max-width: 100%; /* Ensure the container doesn't exceed the card width */
+  text-align: center;
+}
+
+.profile_image img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+}
   .profile_name{
       text-align: center;
       font-weight: bold;
@@ -74,6 +79,11 @@
   margin-top:20px; 
   margin-bottom:15px;
   }
+  .card_text{
+  padding:30px;
+  padding-top:15px;
+  }
+  
   
   .container {
           background-color: #ffffff;
@@ -125,7 +135,14 @@
     display: block;
     margin: 0 auto;
   }*/
-  
+  @media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    width: 100%;
+  }
+}
     </style>
 </head>
 <body style="overflow-x: hidden;">
@@ -172,7 +189,7 @@
   <div class="column">
     <div class="card">
       <img class="profile_image" alt="Hareesh Prathipati" src="img/hareesh.png" width="250" height="250" />
-      <div class="container">
+      <div class="card_text">
         <h2 class="profile_name">Hareesh Prathipati</h2>
         <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
@@ -185,7 +202,7 @@
   <div class="column">
     <div class="card">
       <img class="profile_image" alt="Dharma Rakshak Tadi" src="img/Rakshak Tadi.png" width="250" height="250" />
-      <div class="container">
+      <div class="card_text">
         <h2 class="profile_name">Dharma Rakshak Tadi</h2>
         <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
@@ -198,7 +215,7 @@
   <div class="column">
     <div class="card">
       <img class="profile_image" alt="Jane Doe" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" width="250" height="250" />
-      <div class="container">
+      <div class="card_text">
         <h2 class="profile_name">Anantha sai ram Padala</h2>
         <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
@@ -211,7 +228,7 @@
   <div class="column">
     <div class="card">
       <img class="profile_image" alt="Jane Doe" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" width="250" height="250"/>
-      <div class="container">
+      <div class="card_text">
         <h2 class="profile_name">Ashish Miyapuam</h2>
         <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
@@ -222,7 +239,7 @@
   </div>
 </div>
 
-<footer class="bg-dark text-center text-white" style="position: absolute; bottom: 0; width: 100%;">
+<footer class="bg-dark text-center text-white" style="">
   <!-- Grid container -->
   <div class="container-fluid p-4 pb-0" style="height: 90px;">
     <!-- Section: Social media -->
