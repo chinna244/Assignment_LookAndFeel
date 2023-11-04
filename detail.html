@@ -2,6 +2,29 @@
 <head>
   <style>
     /* Add your CSS styles here */
+    .station-info-container {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .station-card {
+      display: inline-block;
+      width: 30%;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    /* Clear the right margin of the last card in a row */
+    .station-card:nth-child(3n) {
+      margin-right: 1em;
+    }
   </style>
 </head>
 <body>
@@ -10,39 +33,49 @@
   </header>
   <main>
     <section id="station-info">
-      <!-- Add your station information code here -->
+      <div class="container">
+        <!-- Add your station information code here -->
+      </div>
     </section>
     <section id="nearby-stations">
-      <!-- Add your map or list code here -->
+      
+      <div id="stations-list">
+        <!-- This is where the list of stations will be added -->
+      </div>
     </section>
   </main>
   <script>
     var info = document.getElementById("station-info");
-    var nearby = document.getElementById("nearby-stations");
+    var nearby = document.getElementById("stations-list");
     var apiKey = "hkZVQijE8ZvMpchuICzQYDI8gIyPjxVsGzt9h0oI"; // Replace with your API key
-    var apiUrl = "https://cors-anywhere.herokuapp.com/https://developer.nrel.gov/api/alt-fuel-stations/v1/"; // Base URL for the API
+    var apiUrl = "https://developer.nrel.gov/api/alt-fuel-stations/v1/"; // Base URL for the API
     var stationId = window.location.search.split("=")[1]; // Get the station id from the URL query string
-  
+    var latitude = "";
+    var longitude = "";
+
     if (stationId) {
       // Station id exists
       // Build the API request URL for getting the station details
-      var detailUrl = apiUrl + parseInt(stationId) + ".json?api_key=" + apiKey;
+      var detailUrl = apiUrl + stationId + ".json?api_key=" + apiKey;
+
       // Send the API request using XMLHttpRequest
       var xhr1 = new XMLHttpRequest();
       xhr1.open("GET", detailUrl);
-      xhr1.onload = function() {
+      xhr1.onload = function () {
         if (xhr1.status == 200) {
           // Request successful
           var response = JSON.parse(xhr1.responseText); // Parse the response data as JSON
-          var station = response.alt_fuel_station; // Get the station object 
-  
+          var station = response.alt_fuel_station; // Get the station object
+          latitude = station.latitude;
+          longitude = station.longitude;
+
           function generateHTML(station) {
             // Initialize an empty string to store the HTML code
-            var html = "";
+            var html = "<h2>Station Information</h2>";
             // Loop over the station object
             for (var key in station) {
-              // Check if the station object has the key as its own property
-              if (station.hasOwnProperty(key)) {
+              // Check if the station object has the key as its own property and the value is not null
+              if (station.hasOwnProperty(key) && station[key] != null) {
                 // Get the value of the key
                 var value = station[key];
                 // Check if the value is an array
@@ -51,23 +84,73 @@
                   value = value.join(", ");
                 }
                 // Add the key and value pair to the HTML code as a paragraph element
-                html += "<p>" + key + ": " + value + "</p>";
+                html += "<p><strong>" + key + ":<strong> " + value + "</p>";
               }
             }
             // Return the HTML code
             return html;
           }
-          // Add the station information to the section element 
-          info.innerHTML = generateHTML(station);
+
+          // Create a container div for station info
+          var stationInfoContainer = document.createElement("div");
+          stationInfoContainer.className = "station-info-container";
+          stationInfoContainer.innerHTML = generateHTML(station);
+
+          // Add the station information container to the section element
+          info.appendChild(stationInfoContainer);
         } else {
-          // Request failed 
+          // Request failed
           info.innerHTML = "<p>Sorry, something went wrong. Please try again later.</p>";
         }
+
+        // Send the API request for nearby stations
+        var nearbyUrl = apiUrl + "nearest.json?api_key=" + apiKey + "&latitude=" + latitude + "&longitude=" + longitude;
+
+        // Send the API request using XMLHttpRequest
+        var xhr3 = new XMLHttpRequest();
+        xhr3.open("GET", nearbyUrl);
+        xhr3.onload = function () {
+          if (xhr3.status == 200) {
+            // Request successful
+            var response = JSON.parse(xhr3.responseText); // Parse the response data as JSON
+            var nearbyStations = response.fuel_stations; // Get the array of nearby stations
+
+            function generateNearbyStationsHTML(nearbyStations) {
+              // Initialize an empty string to store the HTML code
+              var html = "<h2>Nearby Stations</h2>";
+              // Loop over the nearby stations array
+              nearbyStations.forEach(function (station) {
+                // Create a station card for each nearby station
+                html += '<div class="station-card">';
+                html += "<h3>" + station.station_name + "</h3>";
+                html += "<p>Address: " + station.street_address + "</p>";
+                html += "<p>City: " + station.city + "</p>";
+                html += "<p>State: " + station.state + "</p>";
+                html += "<p>ZIP: " + station.zip + "</p>";
+                html += "<p>Phone: " + station.station_phone + "</p>";
+                html +=
+                  "<p>Distance: " + station.distance.toFixed(2) + " miles</p>";
+                html += "</div>";
+              });
+              // Return the HTML code
+              return html;
+            }
+
+            // Add the nearby stations information to the section element
+            nearby.innerHTML = generateNearbyStationsHTML(nearbyStations);
+          } else {
+            // Request failed
+            nearby.innerHTML =
+              "<p>Sorry, something went wrong while fetching nearby stations.</p>";
+          }
+        };
+        xhr3.send();
       };
       xhr1.send();
     } else {
       // Station id does not exist
-      info.innerHTML = "<p>No station id provided. Please go back to the search page and select a station.</p>";
+      info.innerHTML =
+        "<p>No station id provided. Please go back to the search page and select a station.</p>";
     }
   </script>
 </body>

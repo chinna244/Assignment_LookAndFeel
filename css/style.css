@@ -162,13 +162,13 @@ header {
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start; /* This aligns the cards neatly at the top */
+    justify-content: flex-start;
+    /*align-items: flex-start; /* This aligns the cards neatly at the top */
   }
   
   .station {
     width: 30%; /* Adjust this width based on your design */
-    margin: 0 0 1rem 0; /* Adjust margins as needed */
+    margin: 1 1 1rem 1; /* Adjust margins as needed */
   }
   
   .station .card {
@@ -191,8 +191,5 @@ header {
 }
  
 }
-
-
-
   /* Additional styles for your specific content can be added below */
    
