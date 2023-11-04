@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="card-body">
         <h5 class="card-title">${station.station_name}</h5>
         <p class="card-text">${station.street_address}, ${station.city}, ${station.state}, ${station.zip}</p>
-        <p class="card-text">Phone: ${station.phone}</p>
+        <p class="card-text">Phone: ${station.station_phone}</p>
         <p class="card-text">Fuel Type: ${station.fuel_type_code}</p>
         <p class="card-text">Access Times: ${station.access_days_time}</p>
         <a href="detail.html?id=${station.id}" class="btn btn-secondary">More Details</a>
