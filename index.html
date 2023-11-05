@@ -14,6 +14,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css"> <!-- Link to your external CSS file -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   </head>
   <body>
     <!-- Header -->
@@ -78,7 +80,41 @@
         </div>
       </div>
     </main>
+	
+	
+	<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Fuel Stations by State</h5>
+          <label for="fuelTypeSelect">Select Fuel Type:</label>
+          <select id="fuelTypeSelect" class="form-select">
+             <option value="all">All Fuels</option>
+			  <option value="BD">Biodiesel (B20 and above)</option>
+			  <option value="CNG">Compressed Natural Gas (CNG)</option>
+			  <option value="ELEC">Electric</option>
+			  <option value="E85">Ethanol (E85)</option>
+			  <option value="HY">Hydrogen</option>
+			  <option value="LNG">Liquefied Natural Gas (LNG)</option>
+			  <option value="LPG">Propane (LPG)</option>
+			  <option value="RD">Renewable Diesel (R20 and above)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <canvas id="stateStationsChart" class="chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+	
     <script src="js/script.js"></script> <!-- Link to your external JavaScript file -->
   </body>
 </html>
