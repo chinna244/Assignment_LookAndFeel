@@ -112,30 +112,6 @@
   .mb-4{
     margin: -1.5px;
   }
-  /* Adjust the footer section styles 
-  footer {
-    background-color: #fdfdfd;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    left: 0;
-    right: 0;
-  }
-  
-  /* Adjust the section styles to remove margin 
-  section {
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  /* Center the GitHub icon horizontally in the section 
-  section .btn-floating {
-    display: block;
-    margin: 0 auto;
-  }*/
   @media (max-width: 768px) {
   .row {
     flex-direction: column;
@@ -144,6 +120,34 @@
     width: 100%;
   }
 }
+ /* CSS for centering the image and hiding it initially */
+ #data-model-container {
+            display: none;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+        }
+#data-model-image {
+      margin-top: 20px; /* Adjust the value to increase or decrease the gap */
+      width: 75%; /* To set the image width to 75% of the screen */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;;
+}
+.button1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000000;
+    cursor: pointer;
+    
+  }
+  .button1:hover {
+    background-color: #ff0051;
+  }    
     </style>
 </head>
 <body style="overflow-x: hidden;">
@@ -251,6 +255,28 @@
   </div>
 </div>
 
+<h2><strong>Data Model</strong></h2>
+<button class="button1"   id="view-data-model-button" onclick="toggleDataModel()">View Data Model</button>
+
+<div id="data-model-container">
+    <img id="data-model-image" src="img/DIS_Data_Model.png" alt="Data Model">
+</div>
+
+<script>
+    // JavaScript to handle the button click and show/hide the image
+    function toggleDataModel() {
+            var dataModelContainer = document.getElementById('data-model-container');
+            var viewDataModelButton = document.getElementById('view-data-model-button');
+
+            if (dataModelContainer.style.display === 'none' || dataModelContainer.style.display === '') {
+                dataModelContainer.style.display = 'block';
+                viewDataModelButton.textContent = 'Hide Data Model';
+            } else {
+                dataModelContainer.style.display = 'none';
+                viewDataModelButton.textContent = 'View Data Model';
+            }
+        }
+</script>
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container-fluid p-4 pb-0" style="height: 90px;">
