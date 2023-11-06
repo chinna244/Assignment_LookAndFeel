@@ -6,14 +6,14 @@ body, h1, h2, p {
   
   /* Set a background color for the body */
   body {
-    background-color: #e1e1e1;
+    background-color: #ffffff;
     font-family: "Times New Roman",Times,'Roboto', sans-serif;
   }
 
     /* Style for the header */
     header {
         background-color: #016129 !important; /* Background color for the header */
-        padding: 20px; /* Adjust the padding */
+        padding: 20px 2rem; /* Adjust the padding */
         text-align: center !important;
         background-repeat: no-repeat;
         display: flex;
@@ -54,7 +54,11 @@ body, h1, h2, p {
     
     
   }
-  
+  .nav-item.active {
+    background-color: #ff843d; /* Highlight color for the active item */
+    color: #fff; /* Text color for the active item */
+    border-radius: 6px; /* Adjust the radius value as needed */
+}
   .nav-link {
     color: #ffffff !important; /* !important ensures the style is applied */
     margin-right: 20px;
@@ -63,7 +67,7 @@ body, h1, h2, p {
   }
   
   .nav-link:hover {
-    color: #fd038c  !important;
+    color: #03f0fd  !important;
   }
   /* Style the logo in the center of the header */
   .navbar-brand {
@@ -130,13 +134,8 @@ body, h1, h2, p {
 
 /* Add this style rule for the header */
 header {
-    background-color: #1e7e46 !important; /* Background color for the header */
+    background-color: #f2f2f2 !important; /* Background color for the header */
     padding: 20px 2rem; /* Adjust the padding as needed */
-  }
-  /* Add this style rule to your CSS for Assignment Heading */
-.yellow-background {
-    background-color: gold !important;
-    padding: 20px 0 !important;
   }
   
   /* Add this style to control the image and info container heights */

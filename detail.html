@@ -36,7 +36,7 @@
       margin-right: 1em;
     }
     body {
-    background-image: url('img/BG_Details.jpeg');
+    background-image: url('img/logo2.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -73,12 +73,12 @@
                       <i class="fas fa-home px-md-2 px-1"></i> Home
                   </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                   <a href="Search.html" class="nav-link">
                       <i class="fas fa-search px-md-2 px-1"></i> Search
                   </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                   <a href="about.html" class="nav-link">
                       <i class="fas fa-info-circle px-md-2 px-1"></i> About Us
                   </a>
@@ -129,7 +129,7 @@
 
           function generateHTML(station) {
             // Initialize an empty string to store the HTML code
-            var html = "<h2>Station Information</h2>";
+            var html = "<h2><strong>Station Information</strong></h2>";
             // Loop over the station object
             for (var key in station) {
               // Check if the station object has the key as its own property and the value is not null
@@ -175,7 +175,7 @@
 
             function generateNearbyStationsHTML(nearbyStations) {
               // Initialize an empty string to store the HTML code
-              var html = "<h2>Nearby Stations</h2>";
+              var html = "<h2><strong>Nearby Stations</strong></h2>";
               // Loop over the nearby stations array
               nearbyStations.forEach(function (station) {
                 // Create a station card for each nearby station
