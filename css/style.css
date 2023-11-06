@@ -190,7 +190,7 @@ header {
     flex-direction: column;
   }
   .card-body{
-	  width:350px;
+	  width:100%;
 }
 .station{
 	width:100%;
