@@ -1,0 +1,256 @@
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input, select, textarea {
+            width: 100%;
+        }
+
+        input[type=checkbox] {
+            width: auto;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .submit {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .submit input {
+            width: auto;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit New Station</h1>
+    <p>Use this form to suggest adding a station. If you have more than one station to add or update, contact the Technical Response Service for a spreadsheet.</p>
+    <form>
+        <fieldset>
+            <legend>Your Contact Information</legend>
+            <label for="first-name">First Name <span class="required">*</span></label>
+            <input type="text" id="first-name" name="first-name" required>
+            <label for="last-name">Last Name <span class="required">*</span></label>
+            <input type="text" id="last-name" name="last-name" required>
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="coalition">If you are part of Clean Cities, indicate which coalition.</label>
+            <select id="coalition" name="coalition">
+                <option value="">Select a coalition</option>
+                <option value="Alabama Clean Fuels Coalition">Alabama Clean Fuels Coalition</option>
+                <option value="Alamo Area Clean Cities Coalition">Alamo Area Clean Cities Coalition</option>
+                <option value="Ann Arbor Clean Cities Coalition">Ann Arbor Clean Cities Coalition</option>
+                <!-- Add more options for other coalitions -->
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Station Information</legend>
+            <label for="station-name">Station Name <span class="required">*</span></label>
+            <input type="text" id="station-name" name="station-name" required>
+            <label>Available Fuel(s) <span class="required">*</span></label>
+            <input type="checkbox" id="biodiesel" name="biodiesel">
+            <label for="biodiesel">Biodiesel (B20 and above)</label>
+            <input type="checkbox" id="cng" name="cng">
+            <label for="cng">CNG</label>
+            <input type="checkbox" id="electric" name="electric">
+            <label for="electric">Electric</label>
+            <input type="checkbox" id="ethanol" name="ethanol">
+            <label for="ethanol">Ethanol</label>
+            <input type="checkbox" id="hydrogen" name="hydrogen">
+            <label for="hydrogen">Hydrogen</label>
+            <input type="checkbox" id="lng" name="lng">
+            <label for="lng">LNG</label>
+            <input type="checkbox" id="lpg" name="lpg">
+            <label for="lpg">LPG</label>
+            <input type="checkbox" id="r20" name="r20">
+            <label for="r20">R20 and above</label>
+            <label for="country">Country <span class="required">*</span></label>
+            <select id="country" name="country" required>
+                <option value="">Select a country</option>
+                <option value="USA">United States</option>
+                <option value="Canada">Canada</option>
+            </select>
+            <label for="address">Address <span class="required">*</span></label>
+            <input type="text" id="address" name="address" required>
+            <label for="city">City <span class="required">*</span></label>
+            <input type="text" id="city" name="city" required>
+            <label for="state">State <span class="required">*</span></label>
+            <input type="text" id="state" name="state" required>
+            <label for="postal-code">Postal Code <span class="required">*</span></label>
+            <input type="text" id="postal-code" name="postal-code" required>
+            <label for="access">Type of Access <span class="required">*</span></label>
+            <select id="access" name="access" required>
+                <option value="">Select a type of access</option>
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+                <option value="Planned">Planned</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Optional Station Information</legend>
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="">Select a status</option>
+                <option value="Existing">Existing</option>
+                <option value="Planned">Planned</option>
+                <option value="Out of Service">Out of Service</option>
+            </select>
+            <label>Payment Types</label>
+            <input type="checkbox" id="cash" name="cash">
+            <label for="cash">Cash</label>
+            <input type="checkbox" id="credit" name="credit">
+            <label for="credit">Credit</label>
+            <input type="checkbox" id="debit" name="debit">
+            <label for="debit">Debit</label>
+            <input type="checkbox" id="fleet" name="fleet">
+            <label for="fleet">Fleet</label>
+            <label for="phone">Station Phone</label>
+            <input type="tel" id="phone" name="phone">
+            <label for="hours">Business Hours</label>
+            <input type="text" id="hours" name="hours">
+            <label for="latitude">Latitude</label>
+            <input type="number" id="latitude" name="latitude" step="0.000001">
+            <label for="longitude">Longitude</label>
+            <input type="number" id="longitude" name="longitude" step="0.000001">
+        </fieldset>
+        <fieldset>
+            <legend>Optional Fuel Information</legend>
+            <label for="biodiesel-blends">Biodiesel Blends Available</label>
+            <input type="text" id="biodiesel-blends" name="biodiesel-blends">
+            <label for="cng-pressure">CNG Fill Pressure (psi)</label>
+            <input type="number" id="cng-pressure" name="cng-pressure" step="1">
+            <label for="cng-type">CNG Fill Type</label>
+            <select id="cng-type" name="cng-type">
+                <option value="">Select a fill type</option>
+                <option value="Fast">Fast</option>
+                <option value="Timefill">Timefill</option>
+            </select>
+            <label for="cng-dispensers">CNG Dispensers Installed</label>
+            <input type="number" id="cng-dispensers" name="cng-dispensers" step="1">
+            <label for="cng-capacity">CNG Capacity per Compressor (standard cubic feet per minute)</label>
+            <input type="number" id="cng-capacity" name="cng-capacity" step="1">
+            <label for="cng-storage">CNG Total Storage Capacity (standard cubic feet)</label>
+            <input type="number" id="cng-storage" name="cng-storage" step="1">
+            <label for="cng-renewable">CNG Renewable Energy Used</label>
+            <select id="cng-renewable" name="cng-renewable">
+                <option value="">Select a renewable energy source</option>
+                <option value="Solar">Solar</option>
+                <option value="Wind">Wind</option>
+                <option value="Hydro">Hydro</option>
+                <option value="Biomass">Biomass</option>
+            </select>
+            <label for="cng-rng">CNG Sold as Renewable Natural Gas (RNG)</label>
+            <select id="cng-rng" name="cng-rng">
+                <option value="">Select yes or no</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <label for="level-1">Number of Level 1 Ports</label>
+            <input type="number" id="level-1" name="level-1" step="1">
+            <label for="level-2">Number of Level 2 Ports</label>
+            <input type="number" id="level-2" name="level-2" step=“1”> 
+            <label for=“dc-fast”>Number of DC Fast Ports</label> 
+            <input type=“number” id=“dc-fast” name=“dc-fast” step=“1”> 
+            <label for=“electric-pricing”>Electric Charging Pricing</label> 
+            <input type=“text” id=“electric-pricing” name=“electric-pricing”> 
+            <label for=“electric-renewable”>Electric Charging Renewable Energy Used</label>
+            <select id=“electric-renewable” name=“electric-renewable”> 
+                <option value=“”>Select a renewable energy source</option> 
+                <option value=“Solar”>Solar</option>
+                <option value=“Wind”>Wind</option> 
+                <option value=“Hydro”>Hydro</option>
+                <option value=“Biomass”>Biomass</option> 
+            </select> <label for=“electric-network”>Electric Charging Network</label> 
+            <select id=“electric-network” name=“electric-network”> 
+                <option value=“”>Select a network</option> 
+                <option value=“Blink”>Blink</option> 
+                <option value=“ChargePoint”>ChargePoint</option> 
+                <option value=“EVgo”>EVgo</option> 
+                <option value=“Greenlots”>Greenlots</option> <!-- Add more options for other networks --> 
+            </select> 
+            <label for=“electric-manufacturer”>Electric Charging Manufacturer</label> 
+            <select id=“electric-manufacturer” name=“electric-manufacturer”> 
+                <option value=“”>Select a manufacturer</option> 
+                <option value=“ABB”>ABB</option> 
+                <option value=“AeroVironment”>AeroVironment</option> 
+                <option value=“Bosch”>Bosch</option> 
+                <option value=“ClipperCreek”>ClipperCreek</option> 
+                <!-- Add more options for other manufacturers --> 
+            </select> 
+            <label for=“electric-power”>Electric Charging Power (kW)</label> 
+            <input type=“number” id=“electric-power” name=“electric-power” step=“0.1”> 
+            <label for=“ethanol-blends”>Ethanol Other Blends Offered</label> 
+            <input type=“checkbox” id=“e15” name=“e15”> <label for=“e15”>E15</label> 
+            <input type=“checkbox” id=“e30” name=“e30”> <label for=“e30”>E30</label> 
+            <input type=“checkbox” id=“e40” name=“e40”> <label for=“e40”>E40</label> 
+            <input type=“checkbox” id=“e50” name=“e50”> <label for=“e50”>E50</label> 
+            <input type=“checkbox” id=“e85” name=“e85”> <label for=“e85”>E85</label> 
+            <label for=“hydrogen-pressure”>Hydrogen Pressure</label>
+             <input type=“checkbox” id=“350” name=“350”> 
+             <label for=“350”>350 bar</label> 
+             <input type=“checkbox” id=“700” name=“700”> 
+             <label for=“700”>700 bar</label> 
+             <label for=“hydrogen-standards”>Hydrogen SAE Standards Compliance</label> 
+             <input type=“checkbox” id=“sae-j2601” name=“sae-j2601”> 
+             <label for=“sae-j2601”>SAE J2601</label> 
+             <input type=“checkbox” id=“sae-j2799” name=“sae-j2799”> 
+             <label for=“sae-j2799”>SAE J2799</label>
+             <label for=“propane-nozzles”>Propane Nozzles</label> 
+             <input type=“checkbox” id=“acme” name=“acme”> 
+             <label for=“acme”>ACME</label> 
+             <input type=“checkbox” id=“staubli” name=“staubli”> 
+             <label for=“staubli”>Staubli</label> 
+             <label for=“lng-renewable”>LNG Renewable Energy Used</label> 
+             <select id=“lng-renewable” name=“lng-renewable”> 
+                <option value=“”>Select a renewable energy source</option> 
+                <option value=“Solar”>Solar</option> 
+                <option value=“Wind”>Wind</option> 
+                <option value=“Hydro”>Hydro</option> 
+                <option value=“Biomass”>Biomass</option> 
+            </select> 
+            <label for=“lng-rng”>LNG Sold as Renewable Natural Gas (RNG)</label> 
+            <select id=“lng-rng” name=“lng-rng”> 
+                <option value=“”>Select yes or no</option> 
+                <option value=“Yes”>Yes</option> 
+                <option value=“No”>No</option> 
+            </select> 
+            <label for=“renewable-diesel-blends”>Renewable Diesel Blends Available</label> 
+            <input type=“text” id=“renewable-diesel-blends” name=“renewable-diesel-blends”> 
+            <label for=“renewable-diesel-biodiesel”>Renewable Diesel Blended with Biodiesel</label> 
+            <select id=“renewable-diesel-biodiesel” name=“renewable-diesel-biodiesel”>
+                <option value=“”>Select yes or no</option> 
+                <option value=“Yes”>Yes</option> 
+                <option value=“No”>No</option> 
+            </select> 
+        </fieldset> 
+        <label for=“comments”>Comments</label> 
+        <textarea id=“comments” name=“comments” rows=“5”>
+        </textarea> 
+        <div class=“submit”> 
+            <input type=“submit” value=“Submit”> 
+        </div> 
+    </form> 
+</body> 
+</html>
+

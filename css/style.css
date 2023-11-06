@@ -55,7 +55,7 @@ body, h1, h2, p {
     
   }
   .nav-item.active {
-    background-color: #ff843d; /* Highlight color for the active item */
+    background-color: crimson; /* Highlight color for the active item */
     color: #fff; /* Text color for the active item */
     border-radius: 6px; /* Adjust the radius value as needed */
 }
@@ -134,7 +134,7 @@ body, h1, h2, p {
 
 /* Add this style rule for the header */
 header {
-    background-color: #f2f2f2 !important; /* Background color for the header */
+    background-color: cadetblue !important; /* Background color for the header */
     padding: 20px 2rem; /* Adjust the padding as needed */
   }
   
