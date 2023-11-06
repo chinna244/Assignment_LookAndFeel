@@ -6,7 +6,7 @@ body, h1, h2, p {
   
   /* Set a background color for the body */
   body {
-    background-color: #f3f3f3;
+    background-color: #e1e1e1;
     font-family: "Times New Roman",Times,'Roboto', sans-serif;
   }
 
@@ -197,5 +197,10 @@ header {
 }
  
 }
+/* background color for chart */
+#stateStationsChart {
+  background-color: #ffffff; /* Set your desired background color here */
+}
+
   /* Additional styles for your specific content can be added below */
    

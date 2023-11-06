@@ -78,7 +78,7 @@ fetch(apiUrl)
 
     // Process the data and create a chart
     createFilteredStateStationsChart(data);
-	createPieChart(data, "all");
+	//createPieChart(data, "all");
 
 	        })
   .catch(error => {
@@ -113,6 +113,30 @@ function createFilteredStateStationsChart(data) {
     chart.destroy();
   }
 
+  function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgba(${r}, ${g}, ${b}, 0.2)`;
+  }
+  
+  function getRandomBorderColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgba(${r}, ${g}, ${b}, 1)`;
+  }
+  function generateColors(size) {
+    return Array.from({ length: size }, getRandomColor);
+  }
+  
+  function generateBorderColors(size) {
+    return Array.from({ length: size }, getRandomBorderColor);
+  }
+
+  const colors = generateColors(filteredStateLabels.length);
+  const borderColors = generateBorderColors(filteredStateLabels.length);
+  
   // Create a bar chart
   const ctx = document.getElementById("stateStationsChart").getContext("2d");
   chart = new Chart(ctx, {
@@ -123,18 +147,44 @@ function createFilteredStateStationsChart(data) {
         {
           label: "Number of Stations",
           data: filteredStateData,
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor:  colors, // "rgba(75, 192, 192, 0.2)",
+         borderColor: borderColors, // "rgba(75, 192, 192, 1)",
           borderWidth: 1,
         },
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: true,
       scales: {
         y: {
-          beginAtZero: true,
+          beginAtZero:true,
+          ticks:{
+            color: 'black'
+          },
+          grid: {
+            display: false
+          }
         },
+        x: {
+          ticks: {
+            color: 'black',
+        },
+        grid: {
+            display: false
+        }
+        }
       },
+      plugins: {
+        legend: {
+            labels: {
+                color: 'black',
+                font: {
+                    weight: 'bold'
+                }
+            },
+        }
+    }
     },
   });
 
