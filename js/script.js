@@ -186,6 +186,14 @@ function createFilteredStateStationsChart(data) {
         }
     }
     },
+    // Add an onDraw callback to hide the loading icon after chart rendering
+  plugins: [{
+    afterDraw: function (chart) {
+      if (chart.data.datasets.length > 0) {
+        document.getElementById("chart-loading").style.display = "none";
+      }
+    },
+  }],
   });
 
   // Add an event listener to the fuel type select input
