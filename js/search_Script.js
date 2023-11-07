@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var fuelType = document.getElementById("fuel-type").value;
 
     if (location === "") {
-      alert("Please enter a location or a Zip");
+      alert("Please enter a location or a Zip Code");
       return;
     }
 
