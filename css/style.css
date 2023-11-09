@@ -191,13 +191,15 @@ header {
       display: flex;
       flex-wrap: wrap;
     }
-  
+    .card-body {
+      width: 100%;
+    }
     .station {
-      width: 100%; /* Adjust the width to your preference */
+      width: 80%; /* Adjust the width to your preference */
     }
   }
 
-  @media (min-width: 480px) and (max-width: 768px) {
+  @media (min-width: 481px) and (max-width: 768px) {
     .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -209,7 +211,7 @@ header {
       width: 50%;
     }
   }
-@media (max-width: 1120px) {
+@media (min-width: 769px) and (max-width: 1120px) {
   .card-container {
     display: flex;
     flex-wrap: wrap;
