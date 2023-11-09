@@ -6,7 +6,7 @@ body, h1, h2, p {
   
   /* Set a background color for the body */
   body {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #2980B9, #6DD5FA, #ffffff, #FA7E6D, #FFC300);
     font-family: "Times New Roman",Times,'Roboto', sans-serif;
   }
 
@@ -67,7 +67,7 @@ body, h1, h2, p {
   }
   
   .nav-link:hover {
-    color: #03f0fd  !important;
+    color: #FA9A85  !important;
   }
   /* Style the logo in the center of the header */
   .navbar-brand {
@@ -134,7 +134,7 @@ body, h1, h2, p {
 
 /* Add this style rule for the header */
 header {
-    background-color: cadetblue !important; /* Background color for the header */
+    background-color: #6DD5FA !important; /* Background color for the header  #FA7E6D #FFC300 #6DD5FA #A2CCCA #FA9A85*/
     padding: 20px 2rem; /* Adjust the padding as needed */
   }
   
