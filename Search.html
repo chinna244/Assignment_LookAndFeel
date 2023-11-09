@@ -14,23 +14,12 @@
   
     <style>
     body {
-    background-image: url('img/Search_page_bg.png');
+    background: linear-gradient(135deg, #2980B9, #6DD5FA, #ffffff, #FA7E6D, #FFC300);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 } 
-/* Add opacity to the background image */
-body::after {
-    content: "";
-    background-image: url('img/Search_page_bg.png');
-    opacity: 0.5; /* Adjust the opacity value as needed (0.5 for 50% opacity) */
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;
-}
+
 /* Media query for screen widths between 320px and 480px */
 @media (max-width: 480px) {
     .card-container {
