@@ -8,9 +8,6 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $.noConflict();
-   </script>
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
        /* styles for about us page */
@@ -82,7 +79,6 @@
   text-align:center; 
   margin-top:20px; 
   margin-bottom:15px;
-  font-weight: bold;
   }
   .card_text{
   padding:30px;
@@ -102,7 +98,6 @@
     outline: 0;
     display: inline-block;
     padding: 8px;
-    border-radius: 8px;
     color: white;
     background-color: #000000;
     text-align: center;
@@ -111,7 +106,7 @@
   }
   
   .button:hover {
-    background-color: crimson;
+    background-color: #ff0051;
   }
 
   .mb-4{
@@ -124,9 +119,6 @@
   .column {
     width: 100%;
   }
-}
-.dataModel {
-  margin-left: 10px;
 }
  /* CSS for centering the image and hiding it initially */
  #data-model-container {
@@ -149,19 +141,13 @@
     display: inline-block;
     padding: 8px;
     color: white;
-    border-radius: 8px;
     background-color: #000000;
     cursor: pointer;
     
   }
   .button1:hover {
-    background-color: crimson;
+    background-color: #ff0051;
   }    
-
-  /* Footer background color */
-footer {
-    background-color: #A2CCCA;
-}
     </style>
 </head>
 <body style="overflow-x: hidden;">
@@ -171,6 +157,9 @@ footer {
     <img src="img/logo1.jpeg" width="150" height="150" alt=""></a>
     <h1 class="text-center automargin">ALTERNATIVE FUELING STATION LOCATOR</h1>
   </header>
+<div class="text-center yellow-background" style="margin: 0;">
+  <h2 style="margin-bottom: 0;">Assignment3_Look&Feel for ISM6225 - Distributed Information Systems</h2>
+</div>
      <!-- Navigation -->
 		<div class="container-fluid px-md-5">
 			<div class="row justify-content-between">
@@ -186,44 +175,41 @@ footer {
 		<!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-0" id="navbarResponsive">
       <div class="container-fluid" style="margin-left: 0px;">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span> Menu
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarResponsive"> <!-- Changed the class here -->
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
                       <a href="index.html" class="nav-link">
-                          <i class="fas fa-home px-md-2 px-1"></i> Home
+                          <i class="fas fa-home px-md-2 px-1"></i>Home
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a href="Search.html" class="nav-link">
-                          <i class="fas fa-search px-md-2 px-1"></i> Search
+                      <a href="search1.html" class="nav-link">
+                          <i class="fas fa-search px-md-2 px-1"></i>Search
                       </a>
                   </li>
                   <li class="nav-item active">
                       <a href="about.html" class="nav-link">
-                          <i class="fas fa-info-circle px-md-2 px-1"></i> About Us
+                          <i class="fas fa-info-circle px-md-2 px-1"></i>About Us
                       </a>
                   </li>
               </ul>
           </div>
       </div>
-  </nav>
-  
+  </nav>  
+
 <h2 class="heading">Our Team</h2>
 <div class="row">
   <div class="column">
     <div class="card">
-      <img class="profile_image" alt="Hareesh Prathipati" src="img/hareesh.jpeg" width="250" height="250" />
+      <img class="profile_image" alt="Hareesh Prathipati" src="img/hareesh.png" width="250" height="250" />
       <div class="card_text">
         <h2 class="profile_name">Hareesh Prathipati</h2>
-        <p class="title"></p>
-        <p style="text-align: justify;">I am Hareesh, a tech enthusiast exploring the Business Analytics and Information Systems world.
-           My primary focus is on creating and designing websites and organizing data. 
-           In this project, I contributed by writing HTML and CSS code for the Home and Search pages 
-           and also helped the team develop a logical data model for the database.</p>
-        <p style="text-align: center;">hareeshp@usf.edu</p>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>hareeshp@usf.edu</p>
         <p><a href="https://www.linkedin.com/in/hareeshprathipati/" class="button" target="_blank">Contact</a></p>
       </div>
     </div>
@@ -234,9 +220,9 @@ footer {
       <img class="profile_image" alt="Dharma Rakshak Tadi" src="img/Rakshak Tadi.png" width="250" height="250" />
       <div class="card_text">
         <h2 class="profile_name">Dharma Rakshak Tadi</h2>
-        <p class="title"></p>
-        <p style="text-align: justify;">Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p style="text-align: center;">dharmarakshaktadi@usf.edu</p>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
         <p><a href="https://www.linkedin.com/in/dharma-rakshak-tadi-3802a2160/" class="button" target="_blank">Contact</a></p>
       </div>
     </div>
@@ -244,12 +230,12 @@ footer {
 
   <div class="column">
     <div class="card">
-      <img class="profile_image" alt="Jane Doe" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" width="250" height="250" />
+      <img class="profile_image" alt="Anantha Sai Ram Padala" src="img/IMG_0238%20(1).png" width="250" height="250" />
       <div class="card_text">
-        <h2 class="profile_name">Anantha sai ram Padala</h2>
-        <p class="title"></p>
-        <p style="text-align: justify;">Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p style="text-align: center;">ananthasairam@usf.edu</p>
+        <h2 class="profile_name">Anantha Sai Ram Padala</h2>
+        <p class="title">Project Team Member</p>
+        <p>I am a Masters in Business Analytics and Information Systems student with a keen interest in data science, aspiring to contribute my analytical skills to drive impactful insights in the business domain.</p>
+        <p>ananthasairam@usf.edu</p>
         <p><a href="https://www.linkedin.com/in/anantha-sai-ram-padala-6b6208231/" class="button" target="_blank">Contact</a></p>
       </div>
     </div>
@@ -260,18 +246,18 @@ footer {
       <img class="profile_image" alt="Jane Doe" src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" width="250" height="250"/>
       <div class="card_text">
         <h2 class="profile_name">Ashish Miyapuam</h2>
-        <p class="title"></p>
-        <p style="text-align: justify;">Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p style="text-align: center;">ashishmiyapuram@usf.edu</p>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
         <p><a href="https://www.linkedin.com/in/ashish-miyapuram-639222126/" class="button" target="_blank">Contact</a></p>
       </div>
     </div>
   </div>
 </div>
-<div class="dataModel">
+
 <h2><strong>Data Model</strong></h2>
 <button class="button1"   id="view-data-model-button" onclick="toggleDataModel()">View Data Model</button>
-</div>
+
 <div id="data-model-container">
     <img id="data-model-image" src="img/DIS_Data_Model.png" alt="Data Model">
 </div>
@@ -306,7 +292,7 @@ footer {
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-     &copy; 2023 Alternative Fueling Station Locator. All rights reserved @
+    © 2023 Copyright:
     <a class="text-white" href="index.html">Group 9</a>
   </div>
   <!-- Copyright -->
