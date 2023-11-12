@@ -8,35 +8,24 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $.noConflict();
-   </script>
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
        /* styles for about us page */
-  body {
-    font-family: 'Times New Roman', Times, serif;
-    
-  }
+
   
-  html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  .column {
+.column {
     float: left;
     width: 25%;
     margin-bottom: 10px;
-    padding: 0 8px;
+    padding: 0 5px;
   }
-  
+   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 6px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   
   .profile_image {
@@ -48,14 +37,14 @@
 }
 
 .profile_image img {
-  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  /*max-width: 100%; /* Ensure the image doesn't exceed the container width */
   height: auto; /* Automatically adjust the height to maintain aspect ratio */
 }
   .profile_name{
       text-align: center;
       font-weight: bold;
-      margin: auto ;
-
+      margin: 0 auto ;
+      height: 60px;
   }
   
   .about-section {
@@ -85,11 +74,15 @@
   font-weight: bold;
   }
   .card_text{
-  padding:30px;
+  padding:20px;
   padding-top:1px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   }
-  
-  
+
   .container {
           background-color: #ffffff;
           padding: 30px;
@@ -108,8 +101,14 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
+    align-self: flex-end;
   }
   
+  /* Style for the "Contact" button */
+.card_text .button {
+  align-self: flex-end; /* Align the button to the bottom of the card */
+  margin-top: auto; /* Ensure the button stays at the bottom */
+}
   .button:hover {
     background-color: crimson;
   }
@@ -125,8 +124,18 @@
     width: 100%;
   }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for iPad Air (768px to 1024px) */
+    .column {
+      width: 50%;
+    }
+
+    /* Add any additional styles for the iPad Air here */
+  }
+
 .dataModel {
   margin-left: 10px;
+  margin-top: 10px;
 }
  /* CSS for centering the image and hiding it initially */
  #data-model-container {
@@ -152,6 +161,7 @@
     border-radius: 8px;
     background-color: #000000;
     cursor: pointer;
+    margin-top: -10px;
     
   }
   .button1:hover {
@@ -162,6 +172,46 @@
 footer {
     background-color: #A2CCCA;
 }
+
+/* Add this style to ensure a consistent grid structure */
+.info-section {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto; /* Define rows for title, info-text, info-email, and button */
+    gap: 10px; /* Adjust the gap as needed */
+  }
+
+  .title,
+  .info-text,
+  .info-email {
+    text-align: justify;
+    margin: 0;
+  }
+
+  .info-text {
+    flex-grow: 1; /* Allow the info-text to take up available space */
+    /*height: 280px;*/
+  }
+
+    /* Add these styles to enhance the appearance of the Git log section */
+     .git-log-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .git-log {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    white-space: pre-wrap; /* Preserve white spaces and wrap text */
+  }
+
+  .git-log-toggle{
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
     </style>
 </head>
 <body style="overflow-x: hidden;">
@@ -218,13 +268,15 @@ footer {
       <img class="profile_image" alt="Hareesh Prathipati" src="img/hareesh.jpeg" width="250" height="250" />
       <div class="card_text">
         <h2 class="profile_name">Hareesh Prathipati</h2>
+        <div class="info-section">
         <p class="title"></p>
-        <p style="text-align: justify;">I am Hareesh, a tech enthusiast exploring the Business Analytics and Information Systems world.
+        <p id="p1" class="info-text" style="text-align: justify;">I am Hareesh, a tech enthusiast exploring the Business Analytics and Information Systems world.
            My primary focus is on creating and designing websites and organizing data. 
            In this project, I contributed by writing HTML and CSS code for the Home and Search pages 
            and also helped the team develop a logical data model for the database.</p>
-        <p style="text-align: center;">hareeshp@usf.edu</p>
+        <p class="info-email" style="text-align: center;">hareeshp@usf.edu</p>
         <p><a href="https://www.linkedin.com/in/hareeshprathipati/" class="button" target="_blank">Contact</a></p>
+      </div>
       </div>
     </div>
   </div>
@@ -234,29 +286,33 @@ footer {
       <img class="profile_image" alt="Dharma Rakshak Tadi" src="img/Rakshak Tadi.png" width="250" height="250" />
       <div class="card_text">
         <h2 class="profile_name">Dharma Rakshak Tadi</h2>
+        <div class="info-section">
         <p class="title"></p>
-        <p style="text-align: justify;">I'm a Masters student in Business Analytics and Information Systems at USF, with three years of software engineering experience.
+        <p id="p2" class="info-text" style="text-align: justify;">I'm a Masters student in Business Analytics and Information Systems at USF, with three years of software engineering experience.
            I'm passionate about App development, Machine Learning, and Data Science. 
           In this project, I contributed to web development in About Us page and Footer, handled API responses for data display, and crafted dynamic 
           visualizations to enhance data understanding.</p>
-        <p style="text-align: center;">dharmarakshaktadi@usf.edu</p>
+        <p class="info-email" style="text-align: center;">dharmarakshaktadi@usf.edu</p>
         <p><a href="https://www.linkedin.com/in/dharma-rakshak-tadi-3802a2160/" class="button" target="_blank">Contact</a></p>
+      </div>
       </div>
     </div>
   </div>
 
   <div class="column">
     <div class="card">
-      <img class="profile_image" alt="Jane Doe" src="img/IMG_0238 (1).png" width="250" height="250" />
+      <img class="profile_image" alt="Anantha sai ram Padala" src="img/IMG_0238 (1).png" width="250" height="250" />
       <div class="card_text">
         <h2 class="profile_name">Anantha sai ram Padala</h2>
+        <div class="info-section">
         <p class="title"></p>
-        <p style="text-align: justify;">I am a Masters in Business Analytics and Information Systems student with a keen interest
+        <p id="p3"class="info-text" style="text-align: justify;">I am a Masters in Business Analytics and Information Systems student with a keen interest
            in data science, aspiring to contribute my analytical skills to drive impactful insights in the business domain.
            In this project, I contributed to web development in Data Gatehering and about us page design.</p>
-        <p style="text-align: center;">ananthasairam@usf.edu</p>
+        <p class="info-email" style="text-align: center;">ananthasairam@usf.edu</p>
         <p><a href="https://www.linkedin.com/in/anantha-sai-ram-padala-6b6208231/" class="button" target="_blank">Contact</a></p>
       </div>
+    </div>
     </div>
   </div>
 
@@ -265,23 +321,249 @@ footer {
       <img class="profile_image" alt="Ashish Miyapuram" src="img/Ashish_Miyapuram.png" width="250" height="250"/>
       <div class="card_text">
         <h2 class="profile_name">Ashish Miyapuram</h2>
+        <div class="info-section">
         <p class="title"></p>
-        <p style="text-align: justify;">Software Developer with 3 years' expertise in Cloud, Data Science, App Development, and DevOps. 
+        <p id= "p4" class="info-text" style="text-align: justify;">Software Developer with 3 years' expertise in Cloud, Data Science, App Development, and DevOps. 
           Proficient in AWS, Azure, GCP, Python, Terraform, Docker, Jenkins, and more. MS in Business Analytics, USF '24.
           In this project, I contributed in helping design the data model and Header.</p>
-        <p style="text-align: center;">ashishmiyapuram@usf.edu</p>
+        <p class="info-email" style="text-align: center;">ashishmiyapuram@usf.edu</p>
         <p><a href="https://www.linkedin.com/in/ashish-miyapuram-639222126/" class="button" target="_blank">Contact</a></p>
+      </div>
       </div>
     </div>
   </div>
 </div>
 <div class="dataModel" style="margin-bottom: 15px;">
 <h2><strong>Data Model</strong></h2>
-<button class="button1"   id="view-data-model-button" onclick="toggleDataModel()">View Data Model</button>
+<button class="button1"  id="view-data-model-button" onclick="toggleDataModel()">View Data Model</button>
 </div>
 <div id="data-model-container">
     <img id="data-model-image" src="img/DIS_Data_Model.png" alt="Data Model">
 </div>
+
+<!-- Button to toggle Git log section -->
+<div class="git-log-toggle">
+  <h2><strong>Git Log</strong></h2>
+  <button class="button1" id="view-git-log-button" onclick="toggleGitLog()">View Git Log</button>
+  </div>
+
+  <!-- Git log section -->
+<div class="git-log-section" style="display: none;">
+  <p style="font-weight: bold;">Author: Hareesh Prathipati</p>
+  <pre class="git-log">
+    5       2       about.html
+    46      31      about.html
+    7       7       index.html
+    2       1       index.html
+    2       13      Search.html
+    2       2       Search.html
+    6       4       css/style.css
+    23      15      about.html
+    3       3       css/style.css
+    3       2       detail.html
+    2       2       index.html
+    1       1       index.html
+    0       1       index.html
+    7       8       js/script.js
+    3       0       index.html
+    8       0       js/script.js
+    1       1       index.html
+    1       1       js/search_Script.js
+    2       2       css/style.css
+    1       1       about.html
+    -       -       img/hareesh.jpeg
+    -       -       img/hareesh.jpeg
+    -       -       img/hareesh.jpeg
+    1       1       Search.html
+    3       0       Search.html
+    84      151     SubmitNewStation.html
+    35      0       Search.html
+    29      4       css/style.css
+    256     0       SubmitNewStation.html
+    5       2       about.html
+    2       2       css/style.css
+    1       1       css/style.css
+    2       2       Search.html
+    1       1       Search1.html
+    1       1       about.html
+    9       10      css/style.css
+    5       5       detail.html
+    2       2       index.html
+    1       4       Search.html
+    1       5       Search1.html
+    1       4       about.html
+    1       4       detail.html
+    1       4       index.html
+    2       2       Search.html
+    1       1       css/style.css
+    12      0       detail.html
+    6       5       Search.html
+    8       7       Search1.html
+    10      7       about.html
+    6       5       detail.html
+    19      24      index.html
+    3       0       Search.html
+    2       0       detail.html
+    1       1       Search.html
+    2       2       about.html
+    1       1       detail.html
+    1       1       index.html
+    1       1       js/script.js
+    20      0       Search.html
+    3       0       about.html
+    6       1       css/style.css
+    50      4       detail.html
+    54      4       js/script.js
+    -       -       img/BG_Details.jpeg
+    -       -       img/GasStation.jpg
+    -       -       img/Search_page_bg.png
+    2       1       Search.html
+    50      24      about.html
+    2       1       index.html
+    -       -       img/DIS_Data_Model.png
+    -       -       img/DIS_DATA_MODEL.png
+    -       -       img/DIS_DATA_MODEL.png
+    3       2       about.html
+    10      4       css/style.css
+    1       0       Search.html
+    1       1       about.html
+    3       6       css/style.css
+    100     17      detail.html
+    26      12      Search.html
+    27      14      Search1.html
+    26      15      about.html
+    34      55      detail.html
+    25      12      index.html
+    1       1       js/search_Script.js
+    18      14      Search.html
+    1       7       about.html
+    6       3       css/style.css
+    16      13      about.html
+    5       5       about.html
+    124     150     about.html
+    1       0       css/style.css
+    1       1       index.html
+    1       1       about.html
+    33      174     Search.html
+    1       1       Search1.html
+    23      1       css/style.css
+    66      0       js/search_Script.js
+    -       -       .DS_Store
+    27      14      Search.html
+    28      17      Search1.html
+    22      16      about.html
+    57      7       css/style.css
+    50      32      index.html
+    -       -       img/logo1.jpeg
+    -       -       img/logo2.jpeg
+    -       -       img/logo.jpeg
+    1       1       about.html
+    1       8       css/style.css
+    14      14      index.html
+    2       4       Search.html
+    36      85      Search1.html
+    9       11      about.html
+    112     0       css/style.css
+    -       -       img/{Rakshak Tadi.png.jpg => Rakshak Tadi.png}
+    19      5       index.html
+    1       1       about.html
+    1       1       about.html
+    -       -       img/hareesh.png
+    17      17      about.html
+    79      84      Search.html
+    21      12      about.html
+    0       46      css/main.css
+    0       8368    css/style.css
+    34      72      index.html
+    9       0       js/script.js
+    0       33      sample.html
+    3363    0       scss/bootstrap/bootstrap-grid.css
+    1       0       scss/bootstrap/bootstrap-grid.css.map
+    327     0       scss/bootstrap/bootstrap-reboot.css
+    1       0       scss/bootstrap/bootstrap-reboot.css.map
+    8955    0       scss/bootstrap/bootstrap.css
+    1       0       scss/bootstrap/bootstrap.css.map
+    9242    0       scss/style.css
+    1       0       scss/style.css.map
+    115     0       Search.html
+    117     0       Search1.html
+    15      0       about.html
+    95      0       detail.html
+    35      1       index.html
+</pre>
+<p style="font-weight: bold;">Author: Dharma Rakshak Tadi</p>
+  <pre class="git-log">
+5       2       about.html
+46      31      about.html
+7       7       index.html
+2       1       index.html
+2       13      Search.html
+2       2       Search.html
+6       4       css/style.css
+23      15      about.html
+3       3       css/style.css
+3       2       detail.html
+2       2       index.html
+1       1       index.html
+0       1       index.html
+7       8       js/script.js
+3       0       index.html
+8       0       js/script.js
+1       1       index.html
+1       1       js/search_Script.js
+2       2       css/style.css
+</pre>
+
+<p style="font-weight: bold;">Author: Anantha Sai Ram Padala</p>
+  <pre class="git-log">
+5       2       about.html
+46      31      about.html
+7       7       index.html
+2       1       index.html
+2       13      Search.html
+2       2       Search.html
+6       4       css/style.css
+23      15      about.html
+3       3       css/style.css
+3       2       detail.html
+2       2       index.html
+1       1       index.html
+0       1       index.html
+7       8       js/script.js
+3       0       index.html
+8       0       js/script.js
+1       1       index.html
+1       1       js/search_Script.js
+2       2       css/style.css
+</pre>
+
+<p style="font-weight: bold;">Author: Ashish Miyapuram</p>
+  <pre class="git-log">
+5       2       about.html
+46      31      about.html
+7       7       index.html
+2       1       index.html
+2       13      Search.html
+2       2       Search.html
+6       4       css/style.css
+23      15      about.html
+3       3       css/style.css
+3       2       detail.html
+2       2       index.html
+1       1       index.html
+0       1       index.html
+7       8       js/script.js
+3       0       index.html
+8       0       js/script.js
+1       1       index.html
+1       1       js/search_Script.js
+2       2       css/style.css
+</pre>
+
+</div>
+
+
+
 
 <script>
     // JavaScript to handle the button click and show/hide the image
@@ -297,6 +579,43 @@ footer {
                 viewDataModelButton.textContent = 'View Data Model';
             }
         }
+
+
+   // JavaScript to handle the button click and show/hide the Git log section
+   function toggleGitLog() {
+    var gitLogSection = document.querySelector('.git-log-section');
+    var viewGitLogButton = document.getElementById('view-git-log-button');
+
+    if (gitLogSection.style.display === 'none' || gitLogSection.style.display === '') {
+      gitLogSection.style.display = 'block';
+      viewGitLogButton.textContent = 'Hide Git Log';
+    } else {
+      gitLogSection.style.display = 'none';
+      viewGitLogButton.textContent = 'View Git Log';
+    }
+  }
+
+  
+
+  function setHeights() {
+      var p2 = document.getElementById('p2');
+      var p1 = document.getElementById('p1');
+      var p3 = document.getElementById('p3');
+      var p4 = document.getElementById('p4');
+
+      p1.style.height = p2.clientHeight + 'px';
+      p3.style.height = p2.clientHeight + 'px';
+      p4.style.height = p2.clientHeight + 'px';
+    }
+
+    // Initial call to set heights
+    setHeights();
+
+    // Call setHeights on window resize
+    window.addEventListener('resize', setHeights);
+
+
+
 </script>
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
