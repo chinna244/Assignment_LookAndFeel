@@ -201,6 +201,12 @@ function createFilteredStateStationsChart(data) {
     const selectedFuelType = fuelTypeSelect.value;
     updateChartByFuelType(selectedFuelType);
   });
+
+  window.addEventListener("resize", () => {
+    if (chart) {
+      chart.resize();
+    }
+  });
 }
 
 function updateChartByFuelType(selectedFuelType) {

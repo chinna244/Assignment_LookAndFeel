@@ -16,7 +16,7 @@ body, h1, h2, p {
         padding: 20px 2rem; /* Adjust the padding */
         text-align: center !important;
         background-repeat: no-repeat;
-        display: flex;
+        display: flex; 
         flex-direction: row;
         align-items: center;
       }
@@ -24,8 +24,6 @@ body, h1, h2, p {
       /* Style for the logo image */
       .header img {
         margin-top: 0 !important;       
-        width: 200px;
-        height: 200px;
       }
 
       /* Add a specific CSS rule for the header text */
@@ -196,6 +194,7 @@ header {
     }
     .station {
       width: 80%; /* Adjust the width to your preference */
+    
     }
   }
 
@@ -230,3 +229,67 @@ header {
 
   /* Additional styles for your specific content can be added below */
    
+  /* header changes by Rakshak*/
+  h1.text-center.automargin {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-size: 36px;
+}
+
+@media (max-width: 760px) {
+    .row {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .column {
+        width: 100%;
+    }
+    .profile_name,
+    .info-text,
+    .info-email {
+        text-align: center;
+    }
+    h1.text-center.automargin {
+        font-size:smaller; /* Adjust font size for smaller screens */
+    }
+    header img {
+        width: 80px; /* Adjust width for smaller screens */
+        height: 80px; /* Adjust height for smaller screens */
+    }
+}
+
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px; /* Adjust the max-width as needed for your design */
+  }
+}
+
+/* Styles for medium-sized screens */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px; /* Adjust the max-width as needed for your design */
+  }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 576px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  /* Adjust the width of the dropdown column for smaller screens */
+  #fuelTypeSelect {
+    width: 100%;
+  }
+
+  /* Adjust the width of the state stations chart for smaller screens */
+  #stateStationsChart {
+    max-width: 100%;
+  }
+}
+/*rakshak changes end*/

@@ -53,12 +53,45 @@
 	width:100%;
 }
  
+/* header changes by Rakshak*/
+h1.text-center.automargin {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-size: 36px;
+}
+
+@media (max-width: 760px) {
+    .row {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .column {
+        width: 100%;
+    }
+    .profile_name,
+    .info-text,
+    .info-email {
+        text-align: center;
+    }
+    h1.text-center.automargin {
+        font-size:smaller; /* Adjust font size for smaller screens */
+    }
+    header img {
+        width: 80px; /* Adjust width for smaller screens */
+        height: 80px; /* Adjust height for smaller screens */
+    }
+}
+/*rakshak changes end*/
+
 }
   </style>
 </head>
 <header>
   <!-- Add your header code here --> <a href="index.html">
-    <img src="img/logo1.jpeg" width="150" height="150" alt="">
+    <img src="img/logo1.jpeg" width="120" height="120" alt="">
   </a>
   <h1 class="text-center automargin">ALTERNATIVE FUELING STATION LOCATOR</h1>
 </header>
